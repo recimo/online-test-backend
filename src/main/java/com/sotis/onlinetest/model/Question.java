@@ -1,33 +1,21 @@
 package com.sotis.onlinetest.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(collection = "Questions")
 public class Question {
 
-    @Id
-    private Integer id;
+    //@Id
+    //private Integer id;
     private String questionText;
 
-    public Question(Integer id, String questionText) {
-        this.id = id;
-        this.questionText = questionText;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getQuestionText() {
-        return questionText;
-    }
-
-    public void setQuestionText(String questionText) {
-        this.questionText = questionText;
-    }
 }
