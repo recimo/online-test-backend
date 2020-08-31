@@ -16,6 +16,8 @@ public class Question {
 
     //@Id
     //private Integer id;
+    private String questionQuestion;
     private String questionText;
+    private String questionAnswer;
 
 }

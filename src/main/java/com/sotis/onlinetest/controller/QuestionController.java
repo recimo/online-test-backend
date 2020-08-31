@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/questions")
+@RequestMapping(value = "/questions")
 public class QuestionController {
 
     private final QuestionRepository questionRepository;
@@ -25,12 +25,12 @@ public class QuestionController {
         return questions;
     }
 
-    @PutMapping
+    @PutMapping(consumes = "application/json")
     public void insert(@RequestBody Question question){
         this.questionRepository.insert(question);
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json")
     public void update(@RequestBody Question question){
         this.questionRepository.save(question);
     }
