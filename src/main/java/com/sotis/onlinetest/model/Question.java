@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -19,5 +22,13 @@ public class Question {
     private String questionQuestion;
     private String questionText;
     private String questionAnswer;
+    private String answer;
+    private List<AreaOfInterest> aois;
 
+    public List<AreaOfInterest> getAois() {
+        if(this.aois == null){
+            this.aois = new ArrayList<>();
+        }
+        return aois;
+    }
 }
